@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web1:
+    build: ./web/
+    ports:
+      - 8080:8080
+  static:
+    build: ./static/
+    links:
+      - web1
+    ports:
+      - 9090:80
